@@ -70,18 +70,6 @@ app.get("/weather", (req, res) => {
   );
 });
 
-app.get("/products", (req, res) => {
-  if (!req.query.search) {
-    return res.send({
-      error: "you must provide a search term",
-    });
-  }
-  res.send({
-    products: [],
-  });
-  console.log(req.query.search);
-});
-
 app.get("/help/*", (req, res) => {
   res.render("404", {
     title: "Not Found",
